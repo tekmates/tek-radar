@@ -1,0 +1,22 @@
+---
+layout: default.njk
+title: Tek Radars
+---
+
+<h1>Technology Radars</h1>
+<div class="radars-list">
+    {% for category in collections.categories %}
+    <div class="radar-category">
+        <h2>{{ category }}</h2>
+        <ul class="radar-list">
+            {% for radar in collections.radars %}
+                {% if radar.category === category %}
+                    <li>
+                        <a href="/radars/{{ radar.category}}/{{ radar.date }}">{{ radar.date }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>
