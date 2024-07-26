@@ -122,6 +122,10 @@ module.exports = (config) => {
 
     config.addNunjucksAsyncFilter("jsmin", jsmin);
 
+    config.addPassthroughCopy({ "src/_assets/fonts": "fonts" })
+    config.addPassthroughCopy({ "src/_assets/styles": "styles" })
+    config.addPassthroughCopy({ "src/_assets/images": "images" })
+
     return {
         dir: {
             input: "src",
