@@ -1,5 +1,5 @@
 ---
-layout: "default.njk"
+layout: default.njk
 pagination:
   data: collections.radars
   size: 1
@@ -7,15 +7,18 @@ pagination:
 permalink: /radars/{{ radar.category }}/{{ radar.date }}.html
 ---
 
+{% include 'header.njk' %}
+
 {% set radarVisualization %}
     {% visualizeRadar radar %}
 {% endset %}
 
-<svg id="radar"></svg>
+<div align="center">
+    <svg id="radar"></svg>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://zalando.github.io/tech-radar/release/radar-0.8.js"></script>
-<script>
-    {{ radarVisualization | jsmin | safe }}
-</script>
-
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/js/radar.js"></script>
+    <script>
+        {{ radarVisualization | jsmin | safe }}
+    </script>
+</div>

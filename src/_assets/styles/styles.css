@@ -1,33 +1,32 @@
 @font-face {
-	font-family: 'FormularNeutralRegular';
+	font-family: 'Formular-Neutral';
 	src: url('../fonts/formular-neutral-regular.woff');
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'FormularNeutralMedium';
+	font-family: 'Formular-Neutral';
 	src: url('../fonts/formular-neutral-medium.woff');
-	font-weight: normal;
+	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'FormularNeutralMono';
+	font-family: 'Formular-Neutral';
 	src: url('../fonts/formular-neutral-mono.woff');
-	font-weight: normal;
+	font-weight: 300;
 	font-style: normal;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     margin: 0;
 }
 
 h1 {
-    font-family: 'FormularNeutralMedium';
+    font-family: 'Formular-Neutral';
     font-weight: 500;
     font-size: 50px;
     color: #002C61;
@@ -36,7 +35,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'FormularNeutralMedium';
+    font-family: 'Formular-Neutral';
     font-weight: 500;
     font-size: 32px;
     color: #002C61;
@@ -54,7 +53,8 @@ li a {
     display: inline-block;
     position: relative;
     min-width: 200px;
-    font-family: 'FormularNeutralRegular';
+    font-family: 'Formular-Neutral';
+    font-weight: 400;
     font-size: 24px;
     color: #002C61;
     text-decoration: none;
@@ -96,10 +96,6 @@ hr.solid {
     width: 100%;
 }
 
-header {
-    margin-bottom: 32px;
-}
-
 .header {
     padding: 32px 64px;
 }
@@ -113,11 +109,12 @@ header {
     flex-direction: column;
     justify-content: start; 
     row-gap: 64px;
-    margin: 0px 64px;
+    margin: 32px 64px;
 }
 
 .tagline {
-    font-family: 'FormularNeutralMono';
+    font-family: 'Formular-Neutral';
+    font-weight: 300;
     font-size: 16px;
     color: #00FCAA;
     margin: 0;
