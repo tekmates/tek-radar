@@ -108,7 +108,7 @@ hr.solid {
     display: flex;
     flex-direction: column;
     justify-content: start; 
-    row-gap: 64px;
+    row-gap: 80px;
     margin: 32px 64px;
 }
 
@@ -129,7 +129,8 @@ hr.solid {
 .radars-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    column-gap: 128px;
+    row-gap: 128px;
     padding: 0;
 }
 
