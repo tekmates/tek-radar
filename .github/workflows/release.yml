@@ -1,0 +1,56 @@
+name: 'Release'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Tech-Radar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Tech-Radar
+        run: npm run build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: tech-radar
+          path: public
+
+  deploy:
+    name: Deploy Tech-Radar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: tech-radar
+
+      - name: Setup SSH
+        env:
+          SSH_AGENT_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh-agent -a "${{ env.SSH_AGENT_SOCK }}" > /dev/null 
+          ssh-add - <<< "${{ secrets.DEPLOY_SSH_KEY }}"
+
+      - name: Deploy
+        env:
+          TARGET: "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+        run: |
+          rsync -ahvz --delete -e 'ssh -o StrictHostKeyChecking=no' ./ "${{ env.TARGET }}:var/www/"
+
+
