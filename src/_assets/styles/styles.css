@@ -1,21 +1,18 @@
 @font-face {
-	font-family: 'Formular-Neutral';
-	src: url('../fonts/formular-neutral-regular.woff');
-	font-weight: 400;
+	font-family: 'Regular';
+	src: url('../fonts/golos-ui_regular.woff');
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Formular-Neutral';
-	src: url('../fonts/formular-neutral-medium.woff');
-	font-weight: 500;
+	font-family: 'Bold';
+	src: url('../fonts/pt-root-ui_bold.woff');
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Formular-Neutral';
-	src: url('../fonts/formular-neutral-mono.woff');
-	font-weight: 300;
+	font-family: 'Mono';
+	src: url('../fonts/pt-mono_regular.woff');
 	font-style: normal;
 }
 
@@ -26,8 +23,7 @@ body {
 }
 
 h1 {
-    font-family: 'Formular-Neutral';
-    font-weight: 500;
+    font-family: 'Bold';
     font-size: 50px;
     color: #002C61;
     margin-top: 0;
@@ -35,8 +31,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Formular-Neutral';
-    font-weight: 500;
+    font-family: 'Bold';
     font-size: 32px;
     color: #002C61;
     margin-top: 0;
@@ -53,8 +48,7 @@ li a {
     display: inline-block;
     position: relative;
     min-width: 200px;
-    font-family: 'Formular-Neutral';
-    font-weight: 400;
+    font-family: 'Regular';
     font-size: 24px;
     color: #002C61;
     text-decoration: none;
@@ -113,7 +107,7 @@ hr.solid {
 }
 
 .tagline {
-    font-family: 'Formular-Neutral';
+    font-family: 'Mono';
     font-weight: 300;
     font-size: 16px;
     color: #00FCAA;

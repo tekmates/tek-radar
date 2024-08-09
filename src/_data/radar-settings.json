@@ -2,7 +2,7 @@
     "svg_id": "radar",
     "width": 1450,
     "height": 1000,
-    "font_family": "Formular-Neutral",
+    "font_family": "Regular",
     "colors": {
         "background": "#ffffff",
         "grid": "#dddde0",
