@@ -16,6 +16,43 @@ To add a new entry to the radar:
 2. Place the file in the `radars` folder, within the subfolder corresponding to your field (e.g., iOS, Android, backend). If a subfolder for your field doesn't exist, create one.
 3. After making these changes, open a Pull Request (PR) for review.
 
+You could also tweak settings that will be applied on radars in your field. Create settings.json file inside your subfolder and modify the fields you want. Here is a template of `settings.json` file:
+
+```json
+{
+    "title": "your title here",
+    "rings": {
+        "adopt": { "name": "ADOPT", "color": "#5ba300" },
+        "trial": { "name": "TRIAL", "color": "#009eb0" },
+        "assess": { "name": "ASSESS", "color": "#c7ba00" },
+        "hold": { "name": "HOLD", "color": "#e09b96" }
+    },
+    "quadrants": {
+        "names": {
+            "q1": "Data Management",
+            "q2": "Frameworks & Tools",
+            "q3": "Languages & Techniques",
+            "q4": "Platforms & Infrastructure"
+        },
+        "aliases": {
+            "Data Management": "q1",
+            "data": "q1",
+            "Frameworks & Tools": "q2",
+            "frameworks": "q2",
+            "tools": "q2",
+            "Languages & Techniques": "q3",
+            "languages": "q3",
+            "techniques": "q3",
+            "Platforms & Infrastructure": "q4",
+            "platform": "q4",
+            "platforms": "q4",
+            "infra": "q4",
+            "infrastructure": "q4"
+        }
+    }
+}
+```
+
 ### Development
 
 To make changes to the source code:
