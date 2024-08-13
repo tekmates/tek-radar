@@ -1,0 +1,16 @@
+name: "Radar CSV file schema"
+
+filename_pattern: /^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-\d{4}$/gi
+
+columns:
+  - name: name
+    rules:
+      not_empty: true
+
+  - name: ring
+    rules:
+      allow_values: ['adopt', 'trial', 'assess', 'hold']
+
+  - name: quadrant
+    rules:
+      not_empty: true

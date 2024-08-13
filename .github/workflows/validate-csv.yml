@@ -1,0 +1,22 @@
+name: 'Validate CSV'
+
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+    paths:
+      - '**.csv'
+
+jobs:
+  validate:
+    name: Validate CSV files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate
+        uses: jbzoo/csv-blueprint@v1
+        with:
+          csv: './radars/**/*.csv'
+          schema: './radars/schema.yml'
+          report: github
