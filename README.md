@@ -65,3 +65,7 @@ To make changes to the source code:
 ## Acknowledgements
 
 **Tek-radar** is based on [Zalando's tech radar](https://github.com/zalando/tech-radar) and powered by [Eleventy (11ty)](https://github.com/11ty/eleventy).
+
+## License
+
+**Tek-radar** is under the terms and conditions of the [MIT license](./LICENSE).
