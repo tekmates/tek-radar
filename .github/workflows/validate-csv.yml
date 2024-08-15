@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate
-        uses: jbzoo/csv-blueprint@v1
+        uses: jbzoo/csv-blueprint@1.0.3
         with:
           csv: './radars/**/*.csv'
           schema: './radars/schema.yml'
