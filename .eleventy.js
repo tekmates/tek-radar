@@ -8,11 +8,11 @@ module.exports = (config) => {
     config.addShortcode("visualizeRadar", (radar) => {
         const baseSettings = JSON.parse(fs.readFileSync("src/_data/radar-settings.json", "utf8"));
 
-        var payload = {
+        const payload = {
+            ...baseSettings,
+            ...radar.data,
             "title": radar.category,
             "date": radar.date,
-            ...baseSettings,
-            ...radar.data
         };
 
         return `radar_visualization(${JSON.stringify(payload)})`;

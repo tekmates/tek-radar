@@ -3,7 +3,7 @@ const path = require("path");
 const { parse } = require("csv-parse/sync");
 
 function readCSV(dir) {
-    var file = fs.readFileSync(dir);
+    const file = fs.readFileSync(dir);
 
     return parse(
         file,
@@ -33,7 +33,7 @@ function readRadar(csv, settings) {
     const rings = Object.keys(settings.rings).map((e) => settings.rings[e]);
     const quadrants = Object.keys(settings.quadrants.names).map((e) => ({ name: settings.quadrants.names[e] }));
 
-    var entries = [];
+    const entries = [];
 
     csv.forEach((value) => {
         entries.push(
@@ -56,19 +56,19 @@ function readRadars() {
     const radarsDir = path.join(process.cwd(), "radars")
     const categories = fs.readdirSync(radarsDir)
 
-    var radars = [];
+    const radars = [];
 
     for (const category of categories) {
-        var categoryPath = path.join(radarsDir, category);
+        const categoryPath = path.join(radarsDir, category);
 
-        var settingsPath = path.join(categoryPath, "settings.json");
-        var settings = {};
-
-        if (fs.existsSync(settingsPath)) {
-            settings = JSON.parse(fs.readFileSync(settingsPath), 'utf8');
+        if (!fs.lstatSync(categoryPath).isDirectory()) {
+            continue
         }
 
-        var radarFiles = fs.readdirSync(categoryPath);
+        const settingsPath = path.join(categoryPath, "settings.json");
+        const settings = fs.existsSync(settingsPath) ? JSON.parse(fs.readFileSync(settingsPath), 'utf8') : {}
+
+        const radarFiles = fs.readdirSync(categoryPath);
 
         for (const radar of radarFiles) {
             if (path.extname(radar) === ".csv") {
