@@ -1,0 +1,135 @@
+@font-face {
+	font-family: 'Regular';
+	src: url('../fonts/golos-ui_regular.woff');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bold';
+	src: url('../fonts/pt-root-ui_bold.woff');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mono';
+	src: url('../fonts/pt-mono_regular.woff');
+	font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Bold';
+    font-size: 50px;
+    color: #002C61;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Bold';
+    font-size: 32px;
+    color: #002C61;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li a {
+    display: inline-block;
+    position: relative;
+    min-width: 200px;
+    font-family: 'Regular';
+    font-size: 24px;
+    color: #002C61;
+    text-decoration: none;
+}
+
+li a:before, li a:after {
+	display: inline-block;
+	opacity: 0.4;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+li a:before {
+	margin-right: 8px;
+	content: '<';
+	-webkit-transform: translateX(4px);
+	-moz-transform: translateX(4px);
+	transform: translateX(4px);
+}
+
+li a:after {
+	margin-left: 8px;
+	content: '>';
+	-webkit-transform: translateX(-4px);
+	-moz-transform: translateX(-4px);
+	transform: translateX(-4px);
+}
+
+li a:hover:before, li a:hover:after, li a:focus:before, li a:focus:after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+hr.solid {
+    border-top: 1px solid #B8B8B8;
+    width: 100%;
+}
+
+.header {
+    padding: 32px 64px;
+}
+
+.header img {
+    width: 128px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; 
+    row-gap: 80px;
+    margin: 32px 64px;
+}
+
+.tagline {
+    font-family: 'Mono';
+    font-weight: 300;
+    font-size: 16px;
+    color: #00FCAA;
+    margin: 0;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.radars-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 128px;
+    row-gap: 128px;
+    padding: 0;
+}
+
+.radar-category {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}

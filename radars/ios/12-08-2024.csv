@@ -1,0 +1,59 @@
+name,ring,quadrant
+Gitlab,adopt,infra
+GitHub,adopt,infra
+AppStore Connect,adopt,infra
+Testflight,adopt,infra
+Firebase A/B Tests,adopt,infra
+Firebase Remote Config,adopt,infra
+Firebase Analytics,adopt,infra
+Firebase Cloud Messaging,adopt,infra
+Firebase App Distribution,adopt,infra
+Amplitude,adopt,infra
+Sentry,adopt,infra
+Yandex Metrica Mobile,adopt,infra
+No Code,trial,infra
+tvOS,assess,infra
+Xcode Cloud,assess,infra
+Firebase Crashlytics,hold,infra
+MVVM,adopt,techniques
+Clean Swift,adopt,techniques
+Coordinators,adopt,techniques
+Snapshot Tests,adopt,techniques
+Navidux,adopt,techniques
+Swift,adopt,languages
+Ruby,adopt,languages
+Bash,adopt,languages
+TCA,trial,techniques
+VIPER,hold,techniques
+MVC,hold,techniques
+MVP,hold,techniques
+Objective-C,hold,languages
+Keychain,adopt,data
+Golden Key,adopt,data
+UserDefaults,adopt,data
+Apexy,adopt,data
+SwiftData,assess,data
+CoreData,hold,data
+Realm,hold,data
+Xcode,adopt,tools
+Figma Export,adopt,tools
+Tuist,adopt,tools
+Swiftgen,adopt,tools
+Xcodegen,adopt,tools
+Charles,adopt,tools
+Proxyman,adopt,tools
+Postman,adopt,tools
+Insomnia,adopt,tools
+Fork,adopt,tools
+Git,adopt,tools
+VSCode,adopt,tools
+SwiftUI,adopt,tools
+UIKit,adopt,tools
+Lottie,adopt,tools
+Introspect,adopt,tools
+Snapkit,adopt,tools
+Kingfisher,adopt,tools
+SwiftLint,adopt,tools
+Swift Concurrency,adopt,tools
+Vapor,assess,tools
+Interface Builder,hold,tools

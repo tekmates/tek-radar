@@ -1,0 +1,12 @@
+{
+    "svg_id": "radar",
+    "width": 1450,
+    "height": 1000,
+    "font_family": "Regular",
+    "colors": {
+        "background": "#ffffff",
+        "grid": "#dddde0",
+        "inactive": "#dddddd"
+    },
+    "print_layout": true
+}

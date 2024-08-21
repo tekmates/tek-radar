@@ -1,0 +1,24 @@
+---
+layout: default.njk
+pagination:
+  data: collections.radars
+  size: 1
+  alias: radar
+permalink: /radars/{{ radar.category }}/{{ radar.date }}.html
+---
+
+{% include 'header.njk' %}
+
+{% set radarVisualization %}
+    {% visualizeRadar radar %}
+{% endset %}
+
+<div align="center">
+    <svg id="radar"></svg>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/js/radar.js"></script>
+    <script>
+        {{ radarVisualization | jsmin | safe }}
+    </script>
+</div>

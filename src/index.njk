@@ -1,0 +1,29 @@
+---
+layout: default.njk
+title: Tek Radars
+---
+
+{% include 'header.njk' %}
+
+<div class="container">
+    <div class="title-container">
+        <p class="tagline">Tech-radar</p>
+        <h1>See what's on our Radar</h1>
+    </div>
+
+    <div class="radars-list">
+        {% for category in collections.categories %}
+            <div class="radar-category">
+                <h2>{{ category }}</h2>
+                <hr class="solid">
+                <ul class="radar-list">
+                    {% for radar in collections.radars | filter("category", category) %}
+                        <li class="radar-item">
+                            <a href="/radars/{{ radar.category}}/{{ radar.date }}">{{ radar.date }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
