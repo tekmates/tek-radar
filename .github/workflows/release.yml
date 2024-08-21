@@ -26,31 +26,29 @@ jobs:
         run: npm run build
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tech-radar
           path: public
 
   deploy:
+    needs: build
     name: Deploy Tech-Radar
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: tech-radar
-
-      - name: Setup SSH
-        env:
-          SSH_AGENT_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a "${{ env.SSH_AGENT_SOCK }}" > /dev/null 
-          ssh-add - <<< "${{ secrets.DEPLOY_SSH_KEY }}"
+          path: tech-radar
 
       - name: Deploy
-        env:
-          TARGET: "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
-        run: |
-          rsync -ahvz --delete -e 'ssh -o StrictHostKeyChecking=no' ./ "${{ env.TARGET }}:var/www/"
-
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete
+          path: tech-radar/
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
 
