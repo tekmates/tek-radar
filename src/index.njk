@@ -19,7 +19,7 @@ title: Tek Radars
                 <ul class="radar-list">
                     {% for radar in collections.radars | filter("category", category) %}
                         <li class="radar-item">
-                            <a href="/radars/{{ radar.category}}/{{ radar.date }}">{{ radar.date }}</a>
+                            <a href="/radars/{{ radar.category}}/{{ radar.date }}.html">{{ radar.date }}</a>
                         </li>
                     {% endfor %}
                 </ul>
